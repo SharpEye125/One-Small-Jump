@@ -10,11 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public float charge = 0;
     public float chargeRate = 0.1f;
     Rigidbody2D rb;
+
+    Color baseColor;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        baseColor = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -22,25 +24,23 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButton("Jump") && grounded)
         {
-            Jump();
-        }
-    }
-    void Jump()
-    {
-        if (Input.GetButton("Jump"))
-        {
             charge += Mathf.Lerp(minJump, maxJump, chargeRate) * Time.deltaTime;
             if (charge >= maxJump)
             {
                 charge = maxJump;
             }
         }
-        else if (Input.GetButtonUp("Jump"))
+        else if (Input.GetButtonUp("Jump") && grounded)
         {
 
             rb.AddForce(transform.up * charge, ForceMode2D.Impulse);
             charge = 0f;
         }
+        ChargeJumpColoration();
+    }
+    void Jump()
+    {
+        
     }
 
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             float distance = Mathf.Abs(collision.GetComponent<GravityPoint>().planetRadius - Vector2.Distance(transform.position, collision.transform.position));
             if (distance <= 1)
             {
-                //grounded = distance < 0.4f;
+                grounded = distance < 1f || distance < 0.4f;
             }
         }
     }
@@ -76,6 +76,21 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Planet")
         {
             rb.drag = 0.1f;
+        }
+    }
+    void ChargeJumpColoration()
+    {
+        if (charge >= maxJump)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else if (charge >= maxJump / 2f)
+        {
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = baseColor;
         }
     }
 }

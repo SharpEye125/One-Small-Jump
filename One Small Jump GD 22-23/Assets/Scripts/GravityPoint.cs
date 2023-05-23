@@ -40,9 +40,11 @@ public class GravityPoint : MonoBehaviour
             collision.transform.up = Vector3.MoveTowards(collision.transform.up, -dir, gravityScale * Time.deltaTime);
         }
     }
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, gravityMaxRange);
+        Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, gravityMinRange);
 
     }
