@@ -42,6 +42,8 @@ public class GravityPoint : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(transform.position, GetComponent<CircleCollider2D>().radius * 5);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, gravityMaxRange);
         Gizmos.color = Color.cyan;

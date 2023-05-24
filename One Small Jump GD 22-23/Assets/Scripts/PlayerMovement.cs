@@ -11,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float chargeRate = 0.1f;
     Rigidbody2D rb;
 
+    float horizontal;
+    public float airMoveSpeed;
+
     Color baseColor;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontal = Input.GetAxisRaw("Horizontal");
         if (Input.GetButton("Jump") && grounded)
         {
             charge += Mathf.Lerp(minJump, maxJump, chargeRate) * Time.deltaTime;
@@ -37,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
             charge = 0f;
         }
         ChargeJumpColoration();
+    }
+    private void FixedUpdate()
+    {
+        if (!grounded || grounded)
+        {
+            rb.AddForce(transform.right * horizontal * airMoveSpeed);
+        }
+
     }
     void Jump()
     {
