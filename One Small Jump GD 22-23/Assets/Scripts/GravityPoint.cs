@@ -38,6 +38,10 @@ public class GravityPoint : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.transform.up = Vector3.MoveTowards(collision.transform.up, -dir, gravityScale * Time.deltaTime);
+            if (dist >= gravityMinRange)
+            {
+                collision.gameObject.GetComponent<PlayerMovement>().grounded = true;
+            }
         }
     }
     private void OnDrawGizmos()
