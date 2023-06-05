@@ -9,16 +9,25 @@ public class PlayerMovement : MonoBehaviour
     public float maxJump = 5f;
     public float charge = 0;
     public float chargeRate = 0.1f;
-    Rigidbody2D rb;
-
     float horizontal;
     public float airMoveSpeed;
+    Rigidbody2D rb;
+
+    float landSFXTimer;
+    float landSFXCooldown = 1f;
+    bool landed;
+
+    public AudioClip jumpSFX;
+    public AudioClip landSFX;
+    //public AudioClip outOfBoundsSFX;
+    AudioSource myAudio;
 
     Color baseColor;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        myAudio = GetComponent<AudioSource>();
         baseColor = GetComponent<SpriteRenderer>().color;
     }
 
@@ -36,9 +45,18 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (Input.GetButtonUp("Jump") && grounded)
         {
-
+            myAudio.PlayOneShot(jumpSFX);
             rb.AddForce(transform.up * charge, ForceMode2D.Impulse);
+            grounded = false;
             charge = 0f;
+        }
+        if (landed)
+        {
+            landSFXTimer += Time.deltaTime;
+            if (landSFXTimer >= landSFXCooldown)
+            {
+                landed = false;
+            }
         }
         ChargeJumpColoration();
     }
@@ -61,11 +79,9 @@ public class PlayerMovement : MonoBehaviour
         if (collision.tag == "Planet")
         {
             rb.drag = 1;
-            float distance = Mathf.Abs(collision.GetComponent<GravityPoint>().planetRadius - Vector2.Distance(transform.position, collision.transform.position));
-            if (distance <= 1)
-            {
-                grounded = distance < 1f || distance < 0.4f;
-            }
+            float distance = Vector2.Distance(transform.position, collision.transform.position);
+            //Debug.Log("Distance to " + collision.name + ": " + distance);
+            grounded = distance <= collision.GetComponent<GravityPoint>().gravityMinRange;
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -75,19 +91,25 @@ public class PlayerMovement : MonoBehaviour
             grounded = true;
         }
     }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Planet")
-        {
-            grounded = false;
-        }
-    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Planet")
         {
             rb.drag = 0.1f;
+            grounded = false;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Planet")
+        {
+            if (!landed)
+            {
+                myAudio.PlayOneShot(landSFX);
+            }
+            landSFXTimer = 0f;
+            landed = true;
         }
     }
     void ChargeJumpColoration()

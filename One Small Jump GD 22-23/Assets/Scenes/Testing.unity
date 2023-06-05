@@ -342,6 +342,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 12
+  playerRotateRate: 3
 --- !u!50 &481008277
 Rigidbody2D:
   serializedVersion: 4
@@ -454,14 +455,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481008274}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.12, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 27.097988, y: 2.821835, z: 0.48701727}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1047853190}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500278596
 GameObject:
@@ -598,6 +599,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!50 &553502746
 Rigidbody2D:
   serializedVersion: 4
@@ -710,14 +712,54 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553502743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45, y: -18.8, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 48.97799, y: -15.978165, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1115043144}
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586737901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586737902}
+  m_Layer: 0
+  m_Name: Stage Planets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &586737902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586737901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.9779878, y: -2.821835, z: -0.48701727}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 979370966}
+  - {fileID: 481008281}
+  - {fileID: 1780814754}
+  - {fileID: 987895134}
+  - {fileID: 1091561110}
+  - {fileID: 2076081800}
+  - {fileID: 553502750}
+  - {fileID: 987783745}
+  - {fileID: 657744633}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &618274188
 GameObject:
@@ -854,6 +896,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!50 &657744629
 Rigidbody2D:
   serializedVersion: 4
@@ -966,14 +1009,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657744626}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.6, y: 20.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 51.577988, y: 23.421835, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1034676320}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &840974308
 GameObject:
@@ -1193,14 +1236,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979370961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.6, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -17.622013, y: 2.821835, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 500278597}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &979370967
 MonoBehaviour:
@@ -1231,6 +1274,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!1 &987783738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1326,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!50 &987783741
 Rigidbody2D:
   serializedVersion: 4
@@ -1394,14 +1439,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987783738}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7, y: 21.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.72201204, y: 23.921835, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 618274189}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987895127
 GameObject:
@@ -1454,6 +1499,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 12
+  playerRotateRate: 3
 --- !u!50 &987895130
 Rigidbody2D:
   serializedVersion: 4
@@ -1566,14 +1612,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987895127}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -42.7, y: -12.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -38.72201, y: -9.578165, z: 0.48701727}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1411431439}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034676319
 GameObject:
@@ -1794,6 +1840,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 12
+  playerRotateRate: 3
 --- !u!50 &1091561106
 Rigidbody2D:
   serializedVersion: 4
@@ -1906,14 +1953,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091561103}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.3, y: 22.3, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 23.277987, y: 25.121834, z: 0.48701727}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 840974309}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115043143
 GameObject:
@@ -2010,8 +2057,9 @@ GameObject:
   - component: {fileID: 1140339468}
   - component: {fileID: 1140339467}
   - component: {fileID: 1140339466}
-  - component: {fileID: 1140339465}
   - component: {fileID: 1140339469}
+  - component: {fileID: 1140339465}
+  - component: {fileID: 1140339470}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2148,10 +2196,108 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grounded: 0
   minJump: 1
-  maxJump: 32
+  maxJump: 24
   charge: 0
   chargeRate: 4
   airMoveSpeed: 5
+  jumpSFX: {fileID: 8300000, guid: 14d466c1946f33f49a1f09a20228677a, type: 3}
+  landSFX: {fileID: 8300000, guid: e2c1639c069c7ed47977458a0445d257, type: 3}
+--- !u!82 &1140339470
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140339462}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1411431438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2517,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!50 &1780814750
 Rigidbody2D:
   serializedVersion: 4
@@ -2483,14 +2630,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780814747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -41.3, y: 13.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -37.32201, y: 15.921835, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1498013221}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870661313
 GameObject:
@@ -2627,6 +2774,7 @@ MonoBehaviour:
   planetRadius: 10
   gravityMinRange: 4
   gravityMaxRange: 10
+  playerRotateRate: 3
 --- !u!50 &2076081796
 Rigidbody2D:
   serializedVersion: 4
@@ -2739,12 +2887,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2076081793}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7, y: -15.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.27798772, y: -13.078165, z: 0.48701727}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 259799560}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 586737902}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

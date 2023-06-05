@@ -8,7 +8,7 @@ public class GravityPoint : MonoBehaviour
     public float planetRadius;
     public float gravityMinRange;
     public float gravityMaxRange;
-
+    public float playerRotateRate = 2f;
 
 
     // Start is called before the first frame update
@@ -37,10 +37,15 @@ public class GravityPoint : MonoBehaviour
         collision.GetComponent<Rigidbody2D>().AddForce(dir);
         if (collision.tag == "Player")
         {
-            collision.transform.up = Vector3.MoveTowards(collision.transform.up, -dir, gravityScale * Time.deltaTime);
+            
             if (dist >= gravityMinRange)
             {
+                collision.transform.up = Vector3.MoveTowards(collision.transform.up, -dir, gravityScale * (Time.deltaTime * collision.GetComponent<Rigidbody2D>().velocity.magnitude));
                 collision.gameObject.GetComponent<PlayerMovement>().grounded = true;
+            }
+            else
+            {
+                collision.transform.up = Vector3.MoveTowards(collision.transform.up, -dir, gravityScale * (Time.deltaTime * playerRotateRate));
             }
         }
     }
