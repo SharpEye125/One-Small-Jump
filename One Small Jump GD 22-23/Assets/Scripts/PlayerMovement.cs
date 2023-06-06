@@ -104,12 +104,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Planet")
         {
+            transform.parent = collision.transform;
             if (!landed)
             {
                 myAudio.PlayOneShot(landSFX);
             }
             landSFXTimer = 0f;
             landed = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Planet")
+        {
+            transform.parent = null;
         }
     }
     void ChargeJumpColoration()
