@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     public AudioClip jumpSFX;
     public AudioClip landSFX;
+    Animator anim;
     //public AudioClip outOfBoundsSFX;
     AudioSource myAudio;
 
@@ -29,11 +30,13 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         myAudio = GetComponent<AudioSource>();
         baseColor = GetComponent<SpriteRenderer>().color;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         horizontal = Input.GetAxisRaw("Horizontal");
         if (Input.GetButton("Jump") && grounded)
         {
@@ -58,11 +61,12 @@ public class PlayerMovement : MonoBehaviour
                 landed = false;
             }
         }
-        ChargeJumpColoration();
+        AnimatorUpdate(horizontal);
+        //ChargeJumpColoration();
     }
     private void FixedUpdate()
     {
-        if (!grounded || grounded)
+        if (!grounded)
         {
             rb.AddForce(transform.right * horizontal * airMoveSpeed);
         }
@@ -80,8 +84,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 1;
             float distance = Vector2.Distance(transform.position, collision.transform.position);
-            //Debug.Log("Distance to " + collision.name + ": " + distance);
+            Debug.Log("Distance to " + collision.name + ": " + distance);
             grounded = distance <= collision.GetComponent<GravityPoint>().gravityMinRange;
+            //Debug.Log("Grounded from being in close enough proximity");
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -89,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Planet")
         {
             grounded = true;
+            //Debug.Log("Grounded from touching Planet.");
         }
     }
 
@@ -119,6 +125,13 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.parent = null;
         }
+    }
+    void AnimatorUpdate(float x)
+    {
+        anim.SetBool("grounded", grounded);
+        anim.SetFloat("charge", charge);
+        anim.SetFloat("x", x);
+        //anim.SetFloat("y", y);
     }
     void ChargeJumpColoration()
     {
